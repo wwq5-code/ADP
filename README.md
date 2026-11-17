@@ -1,12 +1,12 @@
 # ADP
 
-本仓库包含 ADP 项目的实验源代码，覆盖 MNIST、Fashion-MNIST、CIFAR-10、SVHN 和 Tiny-ImageNet，并包含基线、成员推断/删除推断及结果分析脚本。
+This repository contains the experimental source code for the ADP project. It covers MNIST, Fashion-MNIST, CIFAR-10, SVHN, and Tiny-ImageNet, including baselines, membership/deletion inference attacks, and result-analysis scripts.
 
-仓库只保存源代码，不包含论文、实验结果、数据集或训练好的模型。
+Only source code is included in this repository. Papers, experimental results, datasets, and trained models are not included.
 
-## 环境配置
+## Environment Setup
 
-建议使用 Python 3.9 或更高版本，并在项目根目录执行：
+Python 3.9 or later is recommended. Run the following commands from the project root:
 
 ```bash
 python3 -m venv .venv
@@ -15,11 +15,11 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-如需使用 GPU，请先按照 [PyTorch 官方说明](https://pytorch.org/get-started/locally/) 安装与本机 CUDA 版本匹配的 PyTorch。
+For GPU support, first install a PyTorch build compatible with your local CUDA version by following the [official PyTorch installation guide](https://pytorch.org/get-started/locally/).
 
-## 数据集
+## Datasets
 
-通过环境变量指定数据集保存位置：
+Use the following environment variables to specify dataset locations:
 
 ```bash
 export MNIST_DATA_ROOT=/path/to/mnist
@@ -29,11 +29,11 @@ export SVHN_DATA_ROOT=/path/to/svhn
 export TINYIMAGENET_DATA_ROOT=/path/to/tiny-imagenet-200
 ```
 
-MNIST、Fashion-MNIST、CIFAR-10 和 SVHN 的主要入口会在数据缺失时通过 `torchvision` 自动下载。Tiny-ImageNet 需要自行下载并解压，其目录中应包含 `train/` 和 `val/`。
+The primary entry points automatically download MNIST, Fashion-MNIST, CIFAR-10, and SVHN through `torchvision` when the datasets are missing. Tiny-ImageNet must be downloaded and extracted manually. Its root directory should contain the `train/` and `val/` directories.
 
-## 运行示例
+## Running the Code
 
-所有命令都应从项目根目录执行。例如：
+Run all commands from the project root. Examples:
 
 ```bash
 # MNIST
@@ -52,24 +52,24 @@ python On_SVHN/main_baseline_for_different_unl_samples.py
 python On_TinyImageNet/main_baseline.py
 ```
 
-其他实验入口位于对应数据集目录下：
+Additional experiment entry points are located in the corresponding dataset directories:
 
-- `main_baseline*.py`：基线与不同删除规模实验；
-- `main_ADP*.py`：ADP 相关实验；
-- `main_lira.py`、`main_rmia.py`：成员推断攻击；
-- `main_unsupervised_baseline.py`：无监督攻击基线；
-- `VIB_unl_*.py`：不同机器遗忘方法及消融实验；
-- `Results_analysis/`：本地实验结果的分析和绘图脚本。
+- `main_baseline*.py`: baselines and experiments with different deletion sizes;
+- `main_ADP*.py`: ADP experiments;
+- `main_lira.py` and `main_rmia.py`: membership inference attacks;
+- `main_unsupervised_baseline.py`: unsupervised attack baselines;
+- `VIB_unl_*.py`: machine-unlearning methods and ablation experiments;
+- `Results_analysis/`: scripts for analyzing and plotting locally generated results.
 
-实验会在相应数据集目录中生成结果、缓存和模型文件。这些产物已由 `.gitignore` 排除，不会提交到仓库。
+Experiments generate results, caches, and model files inside the corresponding dataset directories. These artifacts are excluded by `.gitignore` and will not be committed.
 
-## 项目结构
+## Project Structure
 
 ```text
-On_MNIST/          MNIST 实验
-On_FMNIST/         Fashion-MNIST 实验
-On_CIFAR10/        CIFAR-10 实验
-On_SVHN/           SVHN 实验
-On_TinyImageNet/   Tiny-ImageNet 实验
-Results_analysis/  结果分析与绘图代码
+On_MNIST/          MNIST experiments
+On_FMNIST/         Fashion-MNIST experiments
+On_CIFAR10/        CIFAR-10 experiments
+On_SVHN/           SVHN experiments
+On_TinyImageNet/   Tiny-ImageNet experiments
+Results_analysis/  Result analysis and plotting code
 ```
