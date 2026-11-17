@@ -1,4 +1,4 @@
-# ADP
+# Active Deletion Probing (ADP)
 
 This repository contains the experimental source code for the ADP project. It covers MNIST, Fashion-MNIST, CIFAR-10, SVHN, and Tiny-ImageNet, including baselines, membership/deletion inference attacks, and result-analysis scripts.
 
