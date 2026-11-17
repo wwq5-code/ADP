@@ -1,0 +1,77 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors and operating-system files
+.DS_Store
+.idea/
+.vscode/
+
+# Codex/local working artifacts
+.agents/
+.codex-*/
+tmp/
+
+# Paper and presentation sources/exports
+ADP_paper_writing/
+*.pdf
+*.tex
+*.bib
+*.bbl
+*.aux
+*.blg
+*.fls
+*.fdb_latexmk
+*.doc
+*.docx
+*.ppt
+*.pptx
+
+# Data, checkpoints, and serialized models
+data/
+datasets/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.mat
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+
+# Experiment results, caches, logs, and generated figures
+**/results/
+/On_*/results_*/
+**/*_cache/
+**/.mplconfig/
+**/figures/
+**/tables/
+*.txt
+!requirements.txt
+*.csv
+*.json
+*.ndjson
+*.log
+*.out
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.webp
+output*
+*_928_*
+*_718*
